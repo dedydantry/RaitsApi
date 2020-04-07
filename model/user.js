@@ -1,16 +1,7 @@
-'use strict';
+const DB = require('../config/mysql.js')
 
-const mongoose = require('mongoose'),
-Schema = mongoose.Schema;
+const User = DB.model('User', {
+    tableName: 'admin_users'
+})
 
-const UserSchema = new Schema({
-    username : String,
-    email : String,
-    name : String,
-    role : Number,
-    password : String,
-    created_at : Date
-});
-
-const user = mongoose.model('User', UserSchema);
-module.exports = user;
+module.exports = User

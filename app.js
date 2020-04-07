@@ -20,13 +20,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(midlewareJwt.secret)
-app.use(midlewareJwt.validateToken)
+// app.use(midlewareJwt.secret)
+// app.use(midlewareJwt.validateToken)
 
 server.listen(3000);
-const DB = require('./config/database');
+// const DB = require('./config/database');
 
 let route = require('./route/index');
-app.use(route.product);
+app.use(route.welcome);
 app.use(route.user);
 module.exports = app;

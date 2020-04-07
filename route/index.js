@@ -1,10 +1,11 @@
 const express = require('express');
-const app = express();
 
+let welcome = require('./welcome')
 let product = require('./product');
 let user = require('./user');
 
 module.exports = {
-    product : product,
-    user : user
+    welcome:welcome,
+    product:product,
+    user:user
 }
